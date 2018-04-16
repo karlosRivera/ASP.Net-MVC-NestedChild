@@ -1,0 +1,51 @@
+﻿@*@helper ShowTree(List<NestedChild.Controllers.MenuItem> menusList)
+{
+    <ul>
+        @foreach (var item in menusList)
+        {
+            <li>
+                <span>@item.Name</span>
+
+                @{
+                    List<NestedChild.Controllers.MenuItem> oChild = null;
+                    if (item.Children != null)
+                    { 
+                        oChild = item.Children.Where(e => e.ParentId == item.Id).ToList();
+                    }
+                 }
+
+                @if (oChild != null)
+                {
+                    @ShowTree(oChild)
+                }
+            </li>
+        }
+    </ul>
+}*@
+
+@helper  ShowTree(List<NestedChild.Controllers.MenuItem> menu, int? parentid = 0, int level = 0)
+{
+    var items = menu.Where(m => m.ParentId == parentid);
+
+    if (items.Any())
+    {
+        //if (items.First().ParentId > 0)
+        //{
+        //    level++;
+        //}
+
+        <ul>
+            @foreach (var item in items)
+            {
+            <li>
+                @item.Name
+            </li>
+                @ShowTree(menu, item.Id, level);
+            }
+        </ul>
+    }
+}
+@{
+    var menuList = ViewBag.menusList as List<NestedChild.Controllers.MenuItem>;
+    @ShowTree(menuList);
+}
