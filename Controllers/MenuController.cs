@@ -26,15 +26,15 @@ namespace NestedChild.Controllers
             };
 
 
-            List<MenuItem> mi = allMenu
+            List<MenuItem> mi = allMenu;
             //.Where(e => e.ParentId == 0) /* grab only the root parent nodes */
-            .Select(e => new MenuItem
-            {
-                Id = e.Id,
-                Name = e.Name,
-                ParentId = e.ParentId,
-                //Children = allMenu.Where(x => x.ParentId == e.Id).ToList()
-            }).ToList();
+            //.Select(e => new MenuItem
+            //{
+            //    Id = e.Id,
+            //    Name = e.Name,
+            //    ParentId = e.ParentId,
+            //    //Children = allMenu.Where(x => x.ParentId == e.Id).ToList()
+            //}).ToList();
 
             ViewBag.menusList = mi;
 
