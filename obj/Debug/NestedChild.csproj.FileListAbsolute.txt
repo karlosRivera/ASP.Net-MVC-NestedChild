@@ -23,4 +23,3 @@ c:\users\tridip\documents\visual studio 2013\Projects\NestedChild\NestedChild\bi
 c:\users\tridip\documents\visual studio 2013\Projects\NestedChild\NestedChild\bin\Newtonsoft.Json.xml
 c:\users\tridip\documents\visual studio 2013\Projects\NestedChild\NestedChild\obj\Debug\NestedChild.dll
 c:\users\tridip\documents\visual studio 2013\Projects\NestedChild\NestedChild\obj\Debug\NestedChild.pdb
-C:\Users\TRIDIP\documents\visual studio 2013\Projects\NestedChild\NestedChild\obj\Debug\NestedChild.csprojResolveAssemblyReference.cache

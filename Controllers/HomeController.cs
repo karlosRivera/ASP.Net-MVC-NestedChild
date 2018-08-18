@@ -8,9 +8,24 @@ namespace NestedChild.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpGet]
+        [ActionName("index1")]
+        public ActionResult Index(int x)
+        {
+            return View("Index");
+        }
+
+        [HttpGet]
+        [ActionName("index2")]
+        public ActionResult Index(string y)
+        {
+            return View("Index");
         }
 
         public ActionResult About()
